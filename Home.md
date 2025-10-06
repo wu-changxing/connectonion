@@ -8,10 +8,12 @@ ConnectOnion is a lightweight Python framework for creating AI agents that can u
 
 ### Getting Started
 - **[Quick Start Guide](Quick-Start)** - Build your first agent in 5 minutes
+- **[Agent Core Concepts](Tutorials/Agent-Core-Concepts)** ⭐ NEW - How AI agents really work (complete tutorial)
 - **[Building Your First Agent](Tutorials/Building-Your-First-Agent)** - Complete step-by-step tutorial
 - **[Creating Custom Tools](Tutorials/Creating-Custom-Tools)** - Add capabilities to your agents
 
 ### Features & Guides
+- **[Use Managed Keys](How-To/Use-Managed-Keys)** ⭐ NEW - Use any AI model without API keys (`co auth`)
 - **[Interactive Debugging Guide](Tutorials/Interactive-Debugging-Guide)** - Debug agents with `agent.auto_debug()`
 - **[How to Use Auto-Debug](How-To/Use-Auto-Debug)** - Feature guide and examples
 - **[Debug Agent Errors](How-To/Debug-Agent-Errors)** - Troubleshooting common issues
