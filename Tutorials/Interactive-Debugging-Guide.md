@@ -13,7 +13,7 @@ Learn how to debug AI agents interactively - pause execution, inspect variables,
 
 **Time**: 10 minutes
 **Level**: Beginner to Intermediate
-**Prerequisites**: Basic ConnectOnion knowledge ([Quick Start](../Quick-Start))
+**Prerequisites**: Basic ConnectOnion knowledge ([Quick Start](Quick-Start))
 
 ## Why Debug AI Agents?
 
