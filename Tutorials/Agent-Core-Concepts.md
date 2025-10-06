@@ -454,14 +454,14 @@ Now that you understand how agents work, explore more:
 **Core Skills:**
 - [Creating Custom Tools](Creating-Custom-Tools) - Build powerful, reusable tools
 - [Interactive Debugging Guide](Interactive-Debugging-Guide) - Master `agent.auto_debug()`
-- [Debug Agent Errors](../How-To/Debug-Agent-Errors) - Fix common problems
+- [Debug Agent Errors](How-To-Debug-Agent-Errors) - Fix common problems
 
 **Real Examples:**
-- [Email Agent Example](../Examples/Email-Agent-Example) - Complete email automation
-- [Web Scraping Agent](../Examples/Web-Scraping-Agent) - Extract data from websites
+- [Email Agent Example](Examples-Email-Agent-Example) - Complete email automation
+- [Web Scraping Agent](Examples-Web-Scraping-Agent) - Extract data from websites
 
 **Production:**
-- [Deploy to Production](../How-To/Deploy-To-Production) - Best practices for production agents
+- [Deploy to Production](How-To-Deploy-To-Production) - Best practices for production agents
 
 **Reference:**
 - [Official Agent Documentation](https://docs.connectonion.com/agent) - Complete API reference

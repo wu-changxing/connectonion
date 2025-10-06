@@ -8,19 +8,19 @@ ConnectOnion is a lightweight Python framework for creating AI agents that can u
 
 ### Getting Started
 - **[Quick Start Guide](Quick-Start)** - Build your first agent in 5 minutes
-- **[Agent Core Concepts](Tutorials/Agent-Core-Concepts)** ⭐ NEW - How AI agents really work (complete tutorial)
-- **[Building Your First Agent](Tutorials/Building-Your-First-Agent)** - Complete step-by-step tutorial
-- **[Creating Custom Tools](Tutorials/Creating-Custom-Tools)** - Add capabilities to your agents
+- **[Agent Core Concepts](Tutorials-Agent-Core-Concepts)** ⭐ NEW - How AI agents really work (complete tutorial)
+- **[Building Your First Agent](Tutorials-Building-Your-First-Agent)** - Complete step-by-step tutorial
+- **[Creating Custom Tools](Tutorials-Creating-Custom-Tools)** - Add capabilities to your agents
 
 ### Features & Guides
-- **[Use Managed Keys](How-To/Use-Managed-Keys)** ⭐ NEW - Use any AI model without API keys (`co auth`)
-- **[Interactive Debugging Guide](Tutorials/Interactive-Debugging-Guide)** - Debug agents with `agent.auto_debug()`
-- **[How to Use Auto-Debug](How-To/Use-Auto-Debug)** - Feature guide and examples
-- **[Debug Agent Errors](How-To/Debug-Agent-Errors)** - Troubleshooting common issues
+- **[Use Managed Keys](How-To-Use-Managed-Keys)** ⭐ NEW - Use any AI model without API keys (`co auth`)
+- **[Interactive Debugging Guide](Tutorials-Interactive-Debugging-Guide)** - Debug agents with `agent.auto_debug()`
+- **[How to Use Auto-Debug](How-To-Use-Auto-Debug)** - Feature guide and examples
+- **[Debug Agent Errors](How-To-Debug-Agent-Errors)** - Troubleshooting common issues
 
 ### Examples
-- **[Email Agent Example](Examples/Email-Agent-Example)** - Search and send emails with AI
-- **[Web Scraping Agent](Examples/Web-Scraping-Agent)** - Extract data from websites
+- **[Email Agent Example](Examples-Email-Agent-Example)** - Search and send emails with AI
+- **[Web Scraping Agent](Examples-Web-Scraping-Agent)** - Extract data from websites
 
 ### Reference
 - **[FAQ](FAQ)** - Frequently asked questions
@@ -70,17 +70,17 @@ That's it! The agent will use the LLM to decide when to call `search_web()` and 
 
 **1. Beginner** (Start here!)
 1. [Quick Start Guide](Quick-Start) - 5 minutes
-2. [Building Your First Agent](Tutorials/Building-Your-First-Agent) - 15 minutes
-3. [Email Agent Example](Examples/Email-Agent-Example) - Working code to study
+2. [Building Your First Agent](Tutorials-Building-Your-First-Agent) - 15 minutes
+3. [Email Agent Example](Examples-Email-Agent-Example) - Working code to study
 
 **2. Intermediate**
-1. [Creating Custom Tools](Tutorials/Creating-Custom-Tools)
-2. [Interactive Debugging Guide](Tutorials/Interactive-Debugging-Guide)
-3. [Debug Agent Errors](How-To/Debug-Agent-Errors)
+1. [Creating Custom Tools](Tutorials-Creating-Custom-Tools)
+2. [Interactive Debugging Guide](Tutorials-Interactive-Debugging-Guide)
+3. [Debug Agent Errors](How-To-Debug-Agent-Errors)
 
 **3. Advanced**
-1. [Deploy to Production](How-To/Deploy-To-Production)
-2. [Web Scraping Agent](Examples/Web-Scraping-Agent)
+1. [Deploy to Production](How-To-Deploy-To-Production)
+2. [Web Scraping Agent](Examples-Web-Scraping-Agent)
 3. [Official Documentation](https://docs.connectonion.com) - Full API reference
 
 ## 🔗 Official Resources

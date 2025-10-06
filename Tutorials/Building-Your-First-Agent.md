@@ -420,15 +420,15 @@ if __name__ == "__main__":
 
 **Master Debugging:**
 - [Interactive Debugging Guide](Interactive-Debugging-Guide) - Learn `auto_debug()`
-- [Debug Agent Errors](../How-To/Debug-Agent-Errors) - Troubleshoot issues
+- [Debug Agent Errors](How-To-Debug-Agent-Errors) - Troubleshoot issues
 
 **Build More:**
 - [Creating Custom Tools](Creating-Custom-Tools) - Advanced tool patterns
-- [Email Agent Example](../Examples/Email-Agent-Example) - Real-world example
-- [Web Scraping Agent](../Examples/Web-Scraping-Agent) - Data extraction
+- [Email Agent Example](Examples-Email-Agent-Example) - Real-world example
+- [Web Scraping Agent](Examples-Web-Scraping-Agent) - Data extraction
 
 **Deploy:**
-- [Deploy to Production](../How-To/Deploy-To-Production) - Production best practices
+- [Deploy to Production](How-To-Deploy-To-Production) - Production best practices
 
 ## Common Patterns
 
@@ -480,7 +480,7 @@ agent.input("Search for 'x'")  # Too short - agent sees error
 - ✓ Make tool return more detailed information
 - ✓ Try a better model (gpt-4 vs gpt-3.5)
 
-More help: [Troubleshooting Guide](../Troubleshooting)
+More help: [Troubleshooting Guide](Troubleshooting)
 
 ## Resources
 

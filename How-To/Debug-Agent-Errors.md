@@ -595,8 +595,8 @@ When something goes wrong:
    ```
 
 2. **Check examples:**
-   - [Email Agent Example](../Examples/Email-Agent-Example)
-   - [Web Scraping Agent](../Examples/Web-Scraping-Agent)
+   - [Email Agent Example](Examples-Email-Agent-Example)
+   - [Web Scraping Agent](Examples-Web-Scraping-Agent)
 
 3. **Community help:**
    - [GitHub Discussions](https://github.com/wu-changxing/connectonion/discussions)
@@ -606,11 +606,11 @@ When something goes wrong:
 4. **Documentation:**
    - [Official Docs](https://docs.connectonion.com)
    - [API Reference](https://docs.connectonion.com/api)
-   - [Troubleshooting Guide](../Troubleshooting)
+   - [Troubleshooting Guide](Troubleshooting)
 
 ---
 
 **Related Guides:**
 - [Use Auto-Debug](Use-Auto-Debug) - Debug interactively
-- [Creating Custom Tools](../Tutorials/Creating-Custom-Tools) - Tool best practices
-- [FAQ](../FAQ) - Common questions
+- [Creating Custom Tools](Tutorials-Creating-Custom-Tools) - Tool best practices
+- [FAQ](FAQ) - Common questions

@@ -548,8 +548,8 @@ Now that you know how to use managed keys:
 - Try different models with [Model Comparison Example](#example-3-model-comparison)
 
 **Build Agents:**
-- [Agent Core Concepts](../Tutorials/Agent-Core-Concepts) - How agents work
-- [Creating Custom Tools](../Tutorials/Creating-Custom-Tools) - Add capabilities
+- [Agent Core Concepts](Tutorials-Agent-Core-Concepts) - How agents work
+- [Creating Custom Tools](Tutorials-Creating-Custom-Tools) - Add capabilities
 
 **Production:**
 - Learn when to switch to your own keys

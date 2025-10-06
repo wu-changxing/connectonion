@@ -444,9 +444,9 @@ def search_emails(...):
 - Create email summaries
 
 **Learn More:**
-- [Creating Custom Tools](../Tutorials/Creating-Custom-Tools)
-- [Interactive Debugging](../Tutorials/Interactive-Debugging-Guide)
-- [Deploy to Production](../How-To/Deploy-To-Production)
+- [Creating Custom Tools](Tutorials-Creating-Custom-Tools)
+- [Interactive Debugging](Tutorials-Interactive-Debugging-Guide)
+- [Deploy to Production](How-To-Deploy-To-Production)
 
 **More Examples:**
 - [Web Scraping Agent](Web-Scraping-Agent)

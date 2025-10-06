@@ -568,15 +568,15 @@ def scrape_webpage(url: str) -> str:
 ## Next Steps
 
 **Practice with Examples:**
-- [Email Agent Example](../Examples/Email-Agent-Example) - See real tools in action
-- [Web Scraping Agent](../Examples/Web-Scraping-Agent) - Advanced tool patterns
+- [Email Agent Example](Examples-Email-Agent-Example) - See real tools in action
+- [Web Scraping Agent](Examples-Web-Scraping-Agent) - Advanced tool patterns
 
 **Debug Your Tools:**
 - [Interactive Debugging Guide](Interactive-Debugging-Guide) - Test tools with `auto_debug()`
-- [Debug Agent Errors](../How-To/Debug-Agent-Errors) - Fix common issues
+- [Debug Agent Errors](How-To-Debug-Agent-Errors) - Fix common issues
 
 **Deploy:**
-- [Deploy to Production](../How-To/Deploy-To-Production) - Production considerations
+- [Deploy to Production](How-To-Deploy-To-Production) - Production considerations
 
 ## Summary
 

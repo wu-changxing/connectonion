@@ -476,20 +476,20 @@ def process_data(data: str):
 - ✓ Ask specific questions
 - ✓ Try viewing the trace first (`v`)
 
-More help: [Debug Agent Errors Guide](../How-To/Debug-Agent-Errors)
+More help: [Debug Agent Errors Guide](How-To-Debug-Agent-Errors)
 
 ## Next Steps
 
 **Master Debugging:**
-- [How to Use Auto-Debug](../How-To/Use-Auto-Debug) - Feature reference
-- [Debug Agent Errors](../How-To/Debug-Agent-Errors) - Common issues
+- [How to Use Auto-Debug](How-To-Use-Auto-Debug) - Feature reference
+- [Debug Agent Errors](How-To-Debug-Agent-Errors) - Common issues
 
 **Build More:**
 - [Creating Custom Tools](Creating-Custom-Tools) - Advanced tool patterns
-- [Email Agent Example](../Examples/Email-Agent-Example) - Real example with debugging
+- [Email Agent Example](Examples-Email-Agent-Example) - Real example with debugging
 
 **Deploy:**
-- [Deploy to Production](../How-To/Deploy-To-Production) - Remove debug code for prod
+- [Deploy to Production](How-To-Deploy-To-Production) - Remove debug code for prod
 
 ## Summary
 

@@ -160,7 +160,7 @@ system_prompt="Answer directly without tools"
 system_prompt="Use tools when helpful"
 ```
 
-See [Debug Agent Errors](How-To/Debug-Agent-Errors) for more solutions.
+See [Debug Agent Errors](How-To-Debug-Agent-Errors) for more solutions.
 
 ### Can I use multiple tools?
 
@@ -230,7 +230,7 @@ agent.input("Task")
 # Agent pauses at my_tool(), lets you inspect and modify
 ```
 
-See [Interactive Debugging Guide](Tutorials/Interactive-Debugging-Guide).
+See [Interactive Debugging Guide](Tutorials-Interactive-Debugging-Guide).
 
 ### What is the `@xray` decorator?
 
@@ -449,7 +449,7 @@ agent = Agent("assistant", model="local-model")
 
 ### Can I deploy agents to production?
 
-Yes! See the [Deploy to Production Guide](How-To/Deploy-To-Production).
+Yes! See the [Deploy to Production Guide](How-To-Deploy-To-Production).
 
 **Quick tips:**
 - Remove `auto_debug()` calls
@@ -460,7 +460,7 @@ Yes! See the [Deploy to Production Guide](How-To/Deploy-To-Production).
 
 ### How do I deploy to Heroku/AWS/Docker?
 
-See specific examples in [Deploy to Production](How-To/Deploy-To-Production).
+See specific examples in [Deploy to Production](How-To-Deploy-To-Production).
 
 ### Should I keep `@xray` in production?
 
@@ -475,7 +475,7 @@ Optional. `@xray` without `auto_debug()` just adds enhanced logging (minimal ove
 
 1. **Check guides:**
    - [Troubleshooting Guide](Troubleshooting)
-   - [Debug Agent Errors](How-To/Debug-Agent-Errors)
+   - [Debug Agent Errors](How-To-Debug-Agent-Errors)
 
 2. **Community:**
    - [Discord Server](https://discord.gg/4xfD9k8AUF)
@@ -492,6 +492,6 @@ Ask in our [Discord community](https://discord.gg/4xfD9k8AUF) or [GitHub Discuss
 
 **More Resources:**
 - [Quick Start Guide](Quick-Start)
-- [Building Your First Agent](Tutorials/Building-Your-First-Agent)
-- [Examples](Examples/Email-Agent-Example)
+- [Building Your First Agent](Tutorials-Building-Your-First-Agent)
+- [Examples](Examples-Email-Agent-Example)
 - [Official Documentation](https://docs.connectonion.com)

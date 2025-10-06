@@ -584,8 +584,8 @@ agent.auto_debug()  # Don't forget this!
    ```
 
 3. **Check examples:**
-   - [Email Agent Example](Examples/Email-Agent-Example)
-   - [Web Scraping Agent](Examples/Web-Scraping-Agent)
+   - [Email Agent Example](Examples-Email-Agent-Example)
+   - [Web Scraping Agent](Examples-Web-Scraping-Agent)
 
 4. **Ask the community:**
    - [Discord Server](https://discord.gg/4xfD9k8AUF)
@@ -599,6 +599,6 @@ Please [open an issue](https://github.com/wu-changxing/connectonion/issues) or a
 ---
 
 **Related Guides:**
-- [Debug Agent Errors](How-To/Debug-Agent-Errors) - Detailed debugging guide
+- [Debug Agent Errors](How-To-Debug-Agent-Errors) - Detailed debugging guide
 - [FAQ](FAQ) - Common questions
-- [Interactive Debugging](Tutorials/Interactive-Debugging-Guide) - Learn auto_debug()
+- [Interactive Debugging](Tutorials-Interactive-Debugging-Guide) - Learn auto_debug()

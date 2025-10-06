@@ -644,7 +644,7 @@ except Exception as e:
 
 **Related Guides:**
 - [Debug Agent Errors](Debug-Agent-Errors) - Fix production issues
-- [Creating Custom Tools](../Tutorials/Creating-Custom-Tools) - Production-ready tools
+- [Creating Custom Tools](Tutorials-Creating-Custom-Tools) - Production-ready tools
 - [Use Auto-Debug](Use-Auto-Debug) - Debug in development
 
 ---

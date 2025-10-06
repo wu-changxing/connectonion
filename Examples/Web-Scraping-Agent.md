@@ -583,9 +583,9 @@ Common patterns:
 - Create data visualization
 
 **Learn More:**
-- [Creating Custom Tools](../Tutorials/Creating-Custom-Tools)
-- [Deploy to Production](../How-To/Deploy-To-Production)
-- [Debug Agent Errors](../How-To/Debug-Agent-Errors)
+- [Creating Custom Tools](Tutorials-Creating-Custom-Tools)
+- [Deploy to Production](How-To-Deploy-To-Production)
+- [Debug Agent Errors](How-To-Debug-Agent-Errors)
 
 **More Examples:**
 - [Email Agent](Email-Agent-Example)

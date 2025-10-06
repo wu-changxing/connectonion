@@ -447,9 +447,9 @@ def my_tool(param):
 
 ## Next Steps
 
-- **Full Tutorial:** [Interactive Debugging Guide](../Tutorials/Interactive-Debugging-Guide)
+- **Full Tutorial:** [Interactive Debugging Guide](Tutorials-Interactive-Debugging-Guide)
 - **Fix Issues:** [Debug Agent Errors](Debug-Agent-Errors)
-- **Examples:** [Email Agent with Debugging](../Examples/Email-Agent-Example)
+- **Examples:** [Email Agent with Debugging](Examples-Email-Agent-Example)
 
 ## Summary
 

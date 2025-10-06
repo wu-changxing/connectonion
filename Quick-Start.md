@@ -143,7 +143,7 @@ When debugging is on, the agent will pause at tool calls and let you:
 - Edit variables with Python
 - View execution trace
 
-Learn more in the [Interactive Debugging Guide](Tutorials/Interactive-Debugging-Guide).
+Learn more in the [Interactive Debugging Guide](Tutorials-Interactive-Debugging-Guide).
 
 ## Common Patterns
 
@@ -197,17 +197,17 @@ agent.input("Get data from https://api.example.com/users")
 Now that you've built your first agent, explore more:
 
 **Tutorials:**
-- [Building Your First Agent](Tutorials/Building-Your-First-Agent) - Complete step-by-step guide
-- [Creating Custom Tools](Tutorials/Creating-Custom-Tools) - Advanced tool patterns
-- [Interactive Debugging](Tutorials/Interactive-Debugging-Guide) - Master `auto_debug()`
+- [Building Your First Agent](Tutorials-Building-Your-First-Agent) - Complete step-by-step guide
+- [Creating Custom Tools](Tutorials-Creating-Custom-Tools) - Advanced tool patterns
+- [Interactive Debugging](Tutorials-Interactive-Debugging-Guide) - Master `auto_debug()`
 
 **Examples:**
-- [Email Agent](Examples/Email-Agent-Example) - Search and send emails
-- [Web Scraping Agent](Examples/Web-Scraping-Agent) - Extract data from websites
+- [Email Agent](Examples-Email-Agent-Example) - Search and send emails
+- [Web Scraping Agent](Examples-Web-Scraping-Agent) - Extract data from websites
 
 **Guides:**
-- [Debug Agent Errors](How-To/Debug-Agent-Errors) - Fix common problems
-- [Deploy to Production](How-To/Deploy-To-Production) - Production best practices
+- [Debug Agent Errors](How-To-Debug-Agent-Errors) - Fix common problems
+- [Deploy to Production](How-To-Deploy-To-Production) - Production best practices
 
 ## Troubleshooting
 
@@ -236,4 +236,4 @@ More help: [Troubleshooting Guide](Troubleshooting) | [FAQ](FAQ)
 
 ---
 
-**Ready for more?** → Continue to [Building Your First Agent Tutorial](Tutorials/Building-Your-First-Agent)
+**Ready for more?** → Continue to [Building Your First Agent Tutorial](Tutorials-Building-Your-First-Agent)
