@@ -230,7 +230,7 @@ More help: [Troubleshooting Guide](Troubleshooting) | [FAQ](FAQ)
 
 ## Resources
 
-- **Official Docs**: [connectonion.com/docs](https://connectonion.com/docs)
+- **Official Docs**: [docs.connectonion.com](https://docs.connectonion.com)
 - **GitHub**: [github.com/wu-changxing/connectonion](https://github.com/wu-changxing/connectonion)
 - **Discord**: [Join community](https://discord.gg/4xfD9k8AUF)
 

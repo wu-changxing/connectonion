@@ -81,11 +81,11 @@ That's it! The agent will use the LLM to decide when to call `search_web()` and 
 **3. Advanced**
 1. [Deploy to Production](How-To/Deploy-To-Production)
 2. [Web Scraping Agent](Examples/Web-Scraping-Agent)
-3. [Official Documentation](https://connectonion.com/docs) - Full API reference
+3. [Official Documentation](https://docs.connectonion.com) - Full API reference
 
 ## 🔗 Official Resources
 
-- **Documentation**: [connectonion.com/docs](https://connectonion.com/docs)
+- **Documentation**: [docs.connectonion.com](https://docs.connectonion.com)
 - **GitHub**: [github.com/wu-changxing/connectonion](https://github.com/wu-changxing/connectonion)
 - **PyPI**: [pypi.org/project/connectonion](https://pypi.org/project/connectonion)
 - **Discord**: [Join our community](https://discord.gg/4xfD9k8AUF)

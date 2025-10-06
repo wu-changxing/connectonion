@@ -25,6 +25,6 @@
 - [Troubleshooting](Troubleshooting)
 
 ### External Links
-- [Official Docs →](https://connectonion.com/docs)
+- [Official Docs →](https://docs.connectonion.com)
 - [GitHub →](https://github.com/wu-changxing/connectonion)
 - [Discord →](https://discord.gg/4xfD9k8AUF)

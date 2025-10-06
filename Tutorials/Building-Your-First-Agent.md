@@ -484,7 +484,7 @@ More help: [Troubleshooting Guide](../Troubleshooting)
 
 ## Resources
 
-- [Official Documentation](https://connectonion.com/docs)
+- [Official Documentation](https://docs.connectonion.com)
 - [GitHub Repository](https://github.com/wu-changxing/connectonion)
 - [Discord Community](https://discord.gg/4xfD9k8AUF)
 

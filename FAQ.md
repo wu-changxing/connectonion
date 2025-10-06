@@ -494,4 +494,4 @@ Ask in our [Discord community](https://discord.gg/4xfD9k8AUF) or [GitHub Discuss
 - [Quick Start Guide](Quick-Start)
 - [Building Your First Agent](Tutorials/Building-Your-First-Agent)
 - [Examples](Examples/Email-Agent-Example)
-- [Official Documentation](https://connectonion.com/docs)
+- [Official Documentation](https://docs.connectonion.com)

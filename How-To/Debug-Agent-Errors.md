@@ -604,8 +604,8 @@ When something goes wrong:
    - [Open an issue](https://github.com/wu-changxing/connectonion/issues)
 
 4. **Documentation:**
-   - [Official Docs](https://connectonion.com/docs)
-   - [API Reference](https://connectonion.com/docs/api)
+   - [Official Docs](https://docs.connectonion.com)
+   - [API Reference](https://docs.connectonion.com/api)
    - [Troubleshooting Guide](../Troubleshooting)
 
 ---

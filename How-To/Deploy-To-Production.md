@@ -652,4 +652,4 @@ except Exception as e:
 **Need Help?**
 - [Discord Community](https://discord.gg/4xfD9k8AUF)
 - [GitHub Discussions](https://github.com/wu-changxing/connectonion/discussions)
-- [Official Documentation](https://connectonion.com/docs)
+- [Official Documentation](https://docs.connectonion.com)
