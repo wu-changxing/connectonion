@@ -1,14 +1,14 @@
-# Quick Start: Build Your First AI Agent in Python (5 Minutes)
+# Quick Start: Build Your First AI Agent in Python (2 Minutes)
 
-Learn how to create a Python AI agent with ConnectOnion in under 5 minutes. This tutorial will guide you through installation, setup, and running your first AI-powered agent.
+Learn how to create a Python AI agent with ConnectOnion in under 2 minutes. This tutorial will guide you through installation and running your first AI-powered agent.
 
 ## What You'll Build
 
-A simple AI agent that can search for information and answer questions using tools. By the end, you'll understand:
+A ready-to-run AI agent with example tools. By the end, you'll understand:
 - How to install ConnectOnion
-- How to create an AI agent in 2 lines of code
-- How to add tools (functions) to your agent
-- How to run tasks and see results
+- How to create a complete agent project instantly
+- How to run your agent
+- How to customize it with your own tools
 
 ## Prerequisites
 
@@ -23,70 +23,38 @@ pip install connectonion
 
 That's it! ConnectOnion is now installed.
 
-## Step 2: Set Up Your API Key
-
-Create a `.env` file in your project directory:
+## Step 2: Create Your Agent Project
 
 ```bash
-# .env
-OPENAI_API_KEY=sk-your-key-here
+co create my-agent
 ```
 
-Or set it as an environment variable:
+The CLI will:
+- Guide you through API key setup (automated!)
+- Create a complete project with example code
+- Set up configuration files
+
+## Step 3: Run Your Agent
 
 ```bash
-export OPENAI_API_KEY=sk-your-key-here
-```
-
-## Step 3: Create Your First Agent
-
-Create a new file called `agent.py`:
-
-```python
-from connectonion import Agent
-
-# Define a tool (just a regular Python function)
-def search(query: str) -> str:
-    """Search for information and return results"""
-    # Simulate a search - replace with real API in production
-    return f"Found information about: {query}"
-
-# Create an agent with the tool
-agent = Agent(
-    name="assistant",
-    tools=[search]
-)
-
-# Give it a task
-agent.input("What is the capital of France?")
-```
-
-## Step 4: Run Your Agent
-
-```bash
+cd my-agent
 python agent.py
 ```
 
-You'll see output like this:
+You'll see output showing your agent in action! 🎉
 
-```
-14:32:10 INPUT: What is the capital of France?
-14:32:11 → Tool: search({'query': 'capital of France'})
-14:32:11 ← Result (340ms): Found information about: capital of France
-14:32:12 OUTPUT: The capital of France is Paris.
-```
-
-**Congratulations!** You just built your first AI agent! 🎉
+**Congratulations!** You just created and ran your first AI agent!
 
 ## How It Works
 
-1. **Tools are functions** - Any Python function becomes a tool the agent can use
-2. **Agent decides when to use tools** - The LLM determines if/when to call `search()`
-3. **Automatic execution** - ConnectOnion handles tool calling and result processing
+The generated `agent.py` includes:
+1. **Example tools** - Functions that the agent can use
+2. **Agent configuration** - Pre-configured with your API key
+3. **Ready-to-run code** - Just execute and start building
 
-## Step 5: Add More Tools
+## Step 4: Customize Your Agent
 
-Let's make the agent more powerful:
+Open `agent.py` in your editor and add more tools to make your agent more powerful:
 
 ```python
 from connectonion import Agent
@@ -118,7 +86,19 @@ agent = Agent(
 agent.input("What time is it and what's 25 * 4?")
 ```
 
-The agent will intelligently use both `get_time()` and `calculate()` to answer!
+The agent will intelligently use multiple tools to answer complex questions!
+
+## Step 5: Use Different Templates (Optional)
+
+ConnectOnion includes templates for specialized use cases:
+
+```bash
+# Web automation with Playwright
+co create my-browser-bot --template playwright
+cd my-browser-bot
+```
+
+This creates an agent with browser automation tools for web scraping, form filling, and more!
 
 ## Step 6: Debug Your Agent (Optional)
 
@@ -231,7 +211,7 @@ More help: [Troubleshooting Guide](Troubleshooting) | [FAQ](FAQ)
 ## Resources
 
 - **Official Docs**: [docs.connectonion.com](https://docs.connectonion.com)
-- **GitHub**: [github.com/wu-changxing/connectonion](https://github.com/wu-changxing/connectonion)
+- **GitHub**: [github.com/openonion/connectonion](https://github.com/openonion/connectonion)
 - **Discord**: [Join community](https://discord.gg/4xfD9k8AUF)
 
 ---

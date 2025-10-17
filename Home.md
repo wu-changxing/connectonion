@@ -34,24 +34,21 @@ ConnectOnion helps you build AI agents that can:
 - **Debug easily** - Interactive debugging with `auto_debug()`
 - **Scale simply** - From prototypes to production
 
-### Simple Example
+### Get Started in 2 Minutes
 
-```python
-from connectonion import Agent
+```bash
+# Install
+pip install connectonion
 
-def search_web(query: str) -> str:
-    """Search the web and return results"""
-    return f"Found information about {query}"
+# Create your agent
+co create my-agent
+cd my-agent
 
-agent = Agent(
-    name="assistant",
-    tools=[search_web]
-)
-
-agent.input("Find information about Python AI frameworks")
+# Run it!
+python agent.py
 ```
 
-That's it! The agent will use the LLM to decide when to call `search_web()` and process the results.
+That's it! The CLI handles API key setup automatically.
 
 ## 🎯 Why ConnectOnion?
 
@@ -86,7 +83,7 @@ That's it! The agent will use the LLM to decide when to call `search_web()` and 
 ## 🔗 Official Resources
 
 - **Documentation**: [docs.connectonion.com](https://docs.connectonion.com)
-- **GitHub**: [github.com/wu-changxing/connectonion](https://github.com/wu-changxing/connectonion)
+- **GitHub**: [github.com/openonion/connectonion](https://github.com/openonion/connectonion)
 - **PyPI**: [pypi.org/project/connectonion](https://pypi.org/project/connectonion)
 - **Discord**: [Join our community](https://discord.gg/4xfD9k8AUF)
 
@@ -94,14 +91,14 @@ That's it! The agent will use the LLM to decide when to call `search_web()` and 
 
 - Check the [FAQ](FAQ) for common questions
 - Browse [Troubleshooting](Troubleshooting) for error solutions
-- Ask in [GitHub Discussions](https://github.com/wu-changxing/connectonion/discussions)
+- Ask in [GitHub Discussions](https://github.com/openonion/connectonion/discussions)
 - Join our [Discord community](https://discord.gg/4xfD9k8AUF)
 
 ## 📝 Contributing
 
 Found an error? Want to add a tutorial?
-- Edit pages on [GitHub](https://github.com/wu-changxing/connectonion/tree/main/wiki)
-- Open an [issue](https://github.com/wu-changxing/connectonion/issues)
+- Edit pages on [GitHub](https://github.com/openonion/connectonion/tree/main/wiki)
+- Open an [issue](https://github.com/openonion/connectonion/issues)
 - Join the discussion on [Discord](https://discord.gg/4xfD9k8AUF)
 
 ---
