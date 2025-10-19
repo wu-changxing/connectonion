@@ -1,6 +1,8 @@
 # How-To: Use auto_debug() to Debug AI Agents
 
-Quick reference guide for debugging AI agents with `auto_debug()`. Learn the commands, shortcuts, and common workflows.
+**Quick reference guide for debugging AI agents interactively.** Learn keyboard shortcuts, Python REPL editing, AI help mode, and real-world debugging workflows for Python AI agents. Perfect for developers debugging LLM function calling, tool execution, and agent behavior.
+
+**Keywords:** debug ai agent python, interactive debugging python, llm debugging tools, python agent debugger, ai tool execution debug, breakpoint debugging ai
 
 ## Quick Reference
 
@@ -18,9 +20,20 @@ agent = Agent("assistant", tools=[my_tool])
 agent.auto_debug()  # Enable interactive debugging
 ```
 
+### What You See at Breakpoints
+
+When execution pauses, the debugger shows:
+- **User Prompt:** Your original task
+- **Tool Called:** Which function was executed (e.g., `search()`)
+- **Arguments:** Parameters passed to the tool
+- **Result:** What the tool returned
+- **Next LLM Action:** ✨ **Preview of what the agent plans to do next** (if available)
+- **Progress:** Current iteration (e.g., "Iteration 2/10")
+- **Previous Tools:** What the agent did before this
+
 ### Debug Menu Commands
 
-When paused at a breakpoint:
+When paused at a breakpoint, use **arrow keys** to navigate and **Enter** to select:
 
 | Command | Shortcut | Description |
 |---------|----------|-------------|
@@ -31,6 +44,8 @@ When paused at a breakpoint:
 | Toggle step mode | `s` | Pause at every tool call |
 | Stop debugging | `q` | Exit debug session |
 
+**Navigation:** Use ↑/↓ arrow keys to select, then press Enter. Or type the shortcut letter directly.
+
 ### Universal Commands
 
 Work from anywhere in debug mode:
@@ -40,6 +55,98 @@ Work from anywhere in debug mode:
 | `/menu` | Return to main menu |
 | `/continue` | Resume execution |
 | `?` | Show help |
+
+## Complete Real-World Example
+
+Here's what a full debugging session looks like from start to finish:
+
+```python
+# research_agent.py
+from connectonion import Agent
+from connectonion.decorators import xray
+
+@xray  # We want to debug web searches
+def web_search(query: str) -> str:
+    """Search the web and return results."""
+    # Simulated search
+    if "python" in query.lower():
+        return "Found: Python is a programming language..."
+    return "No results found"
+
+@xray  # We want to debug analysis
+def analyze_content(text: str) -> str:
+    """Analyze text and extract insights."""
+    return f"Analysis: {text[:50]}... [key insights extracted]"
+
+# Create agent with debugging enabled
+agent = Agent(
+    name="researcher",
+    model="co/gpt-4o-mini",
+    tools=[web_search, analyze_content],
+    system_prompt="You help with research tasks."
+)
+
+# Start debugging session
+agent.auto_debug()
+
+# Run a research task
+agent.input("Research Python programming and analyze the results")
+```
+
+**What happens:**
+
+```
+🐛 Debug Session Started for 'researcher'
+═══════════════════════════════════════════
+
+User Prompt: Research Python programming and analyze the results
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 Breakpoint Hit: web_search()
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Tool: web_search
+Arguments: {"query": "Python programming"}
+Result: "Found: Python is a programming language..."
+
+💡 Next LLM Action:
+  → analyze_content(text="Found: Python is...")
+
+Progress: Iteration 1/10
+Previous Tools: [none]
+
+┌─────────────────────────────────────────┐
+│ What would you like to do?              │
+├─────────────────────────────────────────┤
+│ ▸ Continue execution                    │  ← Use arrow keys
+│   Ask AI for help                       │
+│   Edit variables (Python REPL)          │
+│   View execution trace                  │
+│   Toggle step mode                      │
+│   Stop debugging                        │
+└─────────────────────────────────────────┘
+
+> c  ← Type 'c' or press Enter
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 Breakpoint Hit: analyze_content()
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Tool: analyze_content
+Arguments: {"text": "Found: Python is a programming language..."}
+Result: "Analysis: Found: Python is a programming language... [key insights extracted]"
+
+💡 Next LLM Action:
+  → [No more tools] Task complete!
+
+Progress: Iteration 2/10
+
+> c
+
+✅ Task Completed Successfully!
+```
+
+This shows the complete flow: breakpoints trigger, you see what's happening, preview next actions, and control execution.
 
 ## Common Workflows
 
@@ -111,6 +218,58 @@ agent.input("Complex multi-step task")
 # Now agent pauses at EVERY tool call
 # Step through each one with 'c'
 ```
+
+## Understanding the LLM Preview
+
+The "Next LLM Action" preview is a powerful feature that shows what the agent plans to do next:
+
+### How It Works
+
+After each tool execution, the debugger:
+1. Simulates the next LLM call with the current tool result
+2. Shows what tools the agent plans to call next
+3. **Does NOT execute** the tools - just previews the plan
+
+### Example Preview Displays
+
+```
+💡 Next LLM Action:
+  → analyze_content(text="Found: Python is...")
+  → write_summary(content="Analysis complete")
+```
+
+This shows the agent plans to call **two tools** in sequence.
+
+```
+💡 Next LLM Action:
+  → [No more tools] Task complete!
+```
+
+This shows the agent is done and will respond with text instead of calling more tools.
+
+```
+💡 Next LLM Action:
+  → [Preview unavailable]
+```
+
+Preview temporarily unavailable (network issue, etc.). Not critical - just continue.
+
+### Why Preview Is Useful
+
+**See the future:** Know what's coming before it happens
+- "The agent is about to call the wrong tool - I should edit the result"
+- "Perfect, next step is exactly what I expected"
+- "Why is it calling search() again? Let me check with AI help"
+
+**Catch errors early:** Fix problems before they compound
+- See the agent is stuck in a loop before wasting iterations
+- Notice incorrect parameters before the tool fails
+- Identify missing tools the agent is trying to call
+
+**Learn agent behavior:** Understand how your agent thinks
+- See the decision-making process in action
+- Discover when tools should be combined vs. separate
+- Identify opportunities to improve system prompts
 
 ## AI Help Mode Examples
 
@@ -447,9 +606,9 @@ def my_tool(param):
 
 ## Next Steps
 
-- **Full Tutorial:** [Interactive Debugging Guide](Tutorials-Interactive-Debugging-Guide)
-- **Fix Issues:** [Debug Agent Errors](Debug-Agent-Errors)
-- **Examples:** [Email Agent with Debugging](Examples-Email-Agent-Example)
+- **Learn Agents:** [How AI Agents Work](Tutorials-Agent-Core-Concepts) - Complete tutorial on AI agents
+- **Fix Issues:** [Debug Agent Errors](Debug-Agent-Errors) - Troubleshooting guide
+- **Examples:** [Email Agent with Debugging](Examples-Email-Agent-Example) - Real-world example
 
 ## Summary
 

@@ -1,6 +1,8 @@
 # How AI Agents Work - Python Agent Tutorial | ConnectOnion
 
-**Learn how AI agents combine language models with tools to complete tasks autonomously. Step-by-step tutorial with working code examples for building intelligent Python agents.**
+**Learn how AI agents combine language models with tools to complete tasks autonomously. Complete beginner-friendly tutorial with working code examples for building intelligent Python AI agents, testing agent behavior, debugging with interactive tools, and choosing the right LLM models.**
+
+**Keywords:** python ai agent tutorial, how ai agents work, llm agent python, autonomous agents python, ai agent beginner guide, python ai framework, function calling agents, tool-using agents
 
 ## What You'll Learn
 
@@ -282,6 +284,76 @@ agent = Agent(
 | Standard | 8-10 | "Search and summarize" |
 | Complex | 15-25 | Browser automation, data analysis |
 
+### Concept 4: Choosing the Right Model
+
+Different models have different strengths and costs. ConnectOnion supports multiple providers:
+
+```python
+# Default - fast and cost-effective for most tasks
+agent = Agent("bot", model="co/gpt-4o-mini", tools=[...])
+
+# More powerful for complex reasoning
+agent = Agent("researcher", model="co/gpt-4o", tools=[...])
+
+# OpenAI's o1 for difficult problems (slower, more expensive)
+agent = Agent("specialist", model="co/o1-preview", tools=[...])
+
+# Anthropic Claude for long contexts
+agent = Agent("analyzer", model="co/claude-3-5-sonnet-20241022", tools=[...])
+
+# Google Gemini for multimodal tasks
+agent = Agent("vision_bot", model="co/gemini-1.5-pro", tools=[...])
+```
+
+**Model selection guide:**
+
+| Use Case | Recommended Model | Why |
+|----------|-------------------|-----|
+| Development/testing | `co/gpt-4o-mini` | Cheap, fast, good enough |
+| Production (standard) | `co/gpt-4o-mini` | Best cost/performance ratio |
+| Complex reasoning | `co/gpt-4o` | Better at multi-step logic |
+| Difficult problems | `co/o1-preview` | Advanced reasoning (slower) |
+| Long documents | `co/claude-3-5-sonnet` | 200K context window |
+| Image/video processing | `co/gemini-1.5-pro` | Native multimodal support |
+
+**Pro tip:** All models prefixed with `co/` use ConnectOnion's managed keys - no need to manage your own API keys!
+
+### Concept 5: Multi-Turn Conversations
+
+Agents can remember conversation context across multiple turns:
+
+```python
+agent = Agent("assistant", tools=[search_docs])
+
+# First turn
+agent.input("Find documentation about agents")
+# Agent searches and responds
+
+# Second turn - agent remembers the first turn!
+agent.input("Can you summarize that?")
+# Agent knows "that" refers to the previous search results
+```
+
+**How conversations work:**
+
+1. Each `input()` call creates or continues a conversation
+2. Agent remembers all previous messages and tool calls
+3. Context accumulates until you call `agent.reset_conversation()`
+
+**Starting fresh conversations:**
+
+```python
+# Conversation 1
+agent.input("Search for Python")
+agent.input("Now search for JavaScript")  # Remembers Python context
+
+# Start new conversation (forget previous context)
+agent.reset_conversation()
+agent.input("Search for Rust")  # No memory of Python/JavaScript
+```
+
+**Pro tip:** If agent responses get worse over time, it might have too much context. Call `reset_conversation()` to start fresh!
+
 ---
 
 ## Common Patterns
@@ -447,13 +519,106 @@ This is super useful for debugging and understanding agent behavior!
 
 ---
 
+## Testing Your Agents
+
+Writing tests for agents is crucial for production apps. Here are common testing patterns:
+
+### Pattern 1: Test Tool Behavior Directly
+
+Test your tools work correctly before giving them to agents:
+
+```python
+# test_tools.py
+def test_search_tool():
+    """Test search tool returns expected results."""
+    result = search_products("laptop")
+    assert "Found" in result
+    assert "laptop" in result.lower()
+
+def test_calculate_tool():
+    """Test calculator handles errors."""
+    result = calculate_discount(1000, 20)
+    assert result == "$800.00"
+
+    # Test error case
+    result = calculate_discount(-100, 20)
+    assert "Error" in result
+```
+
+### Pattern 2: Test Agent Outcomes
+
+Test the agent completes tasks correctly:
+
+```python
+# test_agent.py
+from connectonion import Agent
+
+def test_agent_searches_correctly():
+    """Test agent uses search tool for search queries."""
+    agent = Agent("bot", tools=[search_products])
+
+    result = agent.input("Find blue shirts")
+
+    # Check agent called the tool and got results
+    assert "Found" in result or "blue" in result.lower()
+
+def test_agent_handles_errors():
+    """Test agent recovers from tool errors."""
+    agent = Agent("bot", tools=[failing_tool, backup_tool])
+
+    result = agent.input("Complete this task")
+
+    # Agent should try backup_tool when failing_tool fails
+    assert "success" in result.lower()
+```
+
+### Pattern 3: Mock Tools for Deterministic Tests
+
+Use mock tools to test agent logic without external dependencies:
+
+```python
+def test_agent_multi_step_logic():
+    """Test agent chains tools correctly."""
+
+    # Mock tools with predictable outputs
+    def mock_search(query: str) -> str:
+        return "Found: item123"
+
+    def mock_get_price(item_id: str) -> str:
+        return "$50.00"
+
+    agent = Agent("bot", tools=[mock_search, mock_get_price])
+
+    result = agent.input("Find laptops and tell me the price")
+
+    # Agent should call both tools in sequence
+    assert "$50.00" in result
+```
+
+### Best Practices for Agent Testing
+
+**✅ Do:**
+- Test tools independently first
+- Use specific assertions (not just "no errors")
+- Mock external APIs and databases
+- Test error handling paths
+- Use cheaper models for tests (`co/gpt-4o-mini`)
+
+**❌ Don't:**
+- Test exact LLM responses (they vary)
+- Assume specific tool call order (LLM decides)
+- Skip error case testing
+- Use expensive models in tests
+
+---
+
 ## Next Steps
 
 Now that you understand how agents work, explore more:
 
 **Core Skills:**
 - [Creating Custom Tools](Creating-Custom-Tools) - Build powerful, reusable tools
-- [Interactive Debugging Guide](Interactive-Debugging-Guide) - Master `agent.auto_debug()`
+- [How-To-Use-Auto-Debug](How-To-Use-Auto-Debug) - Quick reference for interactive debugging
 - [Debug Agent Errors](How-To-Debug-Agent-Errors) - Fix common problems
 
 **Real Examples:**
@@ -468,13 +633,15 @@ Now that you understand how agents work, explore more:
 
 ---
 
-## Summary: The Five Things to Remember
+## Summary: The Seven Things to Remember
 
 1. **Agents = LLM + Tools** - They think (LLM) and act (tools)
 2. **Tools are functions** - Any Python function with a docstring works
 3. **Agents decide** - You don't program the logic, the LLM figures it out
 4. **Iteration loop** - Agents call tools multiple times until the task is done
-5. **Error handling** - Tools should handle errors gracefully
+5. **Choose your model** - `co/gpt-4o-mini` for most tasks, upgrade when needed
+6. **Test thoroughly** - Test tools independently, then test agent outcomes
+7. **Error handling** - Tools should handle errors gracefully and return descriptive messages
 
 ---
 
@@ -490,13 +657,22 @@ A: Not yet, but it's on the roadmap! For now, tools run synchronously.
 A: Don't add it to the `tools` list! Only include tools the agent should access.
 
 **Q: How much does running an agent cost?**
-A: Cost = LLM API calls. Each iteration is one API call. Simple tasks (3-5 iterations) cost pennies. Use cheaper models like `o4-mini` for development.
+A: Cost = LLM API calls. Each iteration is one API call. Simple tasks (3-5 iterations) cost pennies. Use cheaper models like `co/gpt-4o-mini` for development.
 
 **Q: Can tools call other tools?**
 A: Tools run independently. If you need tool chaining, let the agent do it across iterations, or create a composite tool that calls multiple functions internally.
 
 **Q: What's the difference between `Agent` and `llm_do`?**
 A: `Agent` is for multi-step tasks with tools. `llm_do` is for single LLM calls without tools. Use `Agent` when you need the agent to take actions.
+
+**Q: Do I need to manage API keys?**
+A: No! Use models prefixed with `co/` (like `co/gpt-4o-mini`) to use ConnectOnion's managed keys. Just run `co auth` once and you're done.
+
+**Q: Can agents remember previous conversations?**
+A: Yes! Each call to `agent.input()` continues the conversation. The agent remembers all previous messages and tool calls. Call `agent.reset_conversation()` to start fresh.
+
+**Q: How do I debug my agent?**
+A: Use `agent.auto_debug()` to enable interactive debugging with breakpoints, Python REPL editing, and AI help. See [How-To-Use-Auto-Debug](How-To-Use-Auto-Debug) for details.
 
 ---
 
